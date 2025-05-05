@@ -32,7 +32,7 @@ headers = {
 }
 
 today = datetime.now()
-
+#
 #
 # response = requests.post(url=graph_endpoint, json = graph_config, headers=headers)
 # print(response.text)
@@ -41,12 +41,12 @@ att_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
 
 graph_att = {
     "date" : today.strftime("%Y%m%d"),
-    "quantity": "5",
+    "quantity": input("How many hours did you study today? "),
 }
 
-#
-# response = requests.post(url=att_endpoint, json=graph_att, headers=headers)
-# print(response.text)
+
+response = requests.post(url=att_endpoint, json=graph_att, headers=headers)
+print(response.text)
 
 
 
@@ -58,7 +58,7 @@ graph_put = {
 # response = requests.put(url=put_endpoint, json = graph_put, headers=headers)
 # print(response.text)
 
-delete_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/20250503"
-
-response = requests.delete(url= delete_endpoint, headers=headers)
-print(response.text)
+# delete_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/20250503"
+#
+# response = requests.delete(url= delete_endpoint, headers=headers)
+# print(response.text)
